@@ -1,5 +1,4 @@
 from app.models import ArduinoData
-from app.db import db
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import random

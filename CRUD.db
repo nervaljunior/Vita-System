@@ -1,0 +1,16 @@
+CREATE TABLE Usuarios (
+    id INTEGER PRIMARY KEY,
+    nome TEXT,
+    funcao TEXT
+);
+
+
+CREATE TABLE Dados (
+    id INTEGER PRIMARY KEY,
+    data DATE,
+    hora TIME,
+    intervalo INTEGER,
+    dados_json TEXT,
+    usuario_id INTEGER,
+    FOREIGN KEY (usuario_id) REFERENCES Usuarios(id)
+);
