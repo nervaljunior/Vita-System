@@ -1,0 +1,40 @@
+
+.boxSalvo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #122A6E;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#tituloSalvo {
+    position: absolute;
+    top: 55px;
+    left: 240px;
+    width:max-content;
+    transform: translate(-50%,-50%);
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 55px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+}
+
+#botaosalvo {
+    position: absolute;
+    top: 20px;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    color: #122A6E;
+}
+
+
