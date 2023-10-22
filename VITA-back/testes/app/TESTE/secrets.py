@@ -1,1 +1,0 @@
-# No arquivo secrets.pySSID = "UFMA"PASSWORD = "JR06082017"# Configuraes MQTTMQTT_CLIENT_ID = "mqtt"MQTT_BROKER = "192.168.0.14"MQTT_USER = ""MQTT_PASSWORD = ""MQTT_TOPIC = "sala/resistencia"

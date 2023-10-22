@@ -1,16 +1,22 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+#esses dados aqui viram direto do brokerMQTT
+
+# fazer flask ou fastpi para requisição de dados do banco de dados
+from fastapi import FastAPI,request,jsonify
+import uvicorn
 import mysql.connector
 
-app = Flask(__name__)
-CORS(app)  # Adiciona o middleware Flask-CORS
+app= FastAPI()
 
 mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="jbneto9!",
-    database="siris"
+    password="nervs",
+    database="VITA"
 )
+
+@app.get('/get_data')
+async def get_data():
+    return{'body:redenrizar esse texto.'}
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -94,5 +100,10 @@ def delete_user(user_id):
     except Exception as e:
         return jsonify({'message': 'Error occurred', 'error': str(e)})
 
-if __name__ == '__main__':
-    app.run()
+
+
+if __name__=='__main__':
+    uvicorn.run(app, host='0.0.0.0',port=7777)
+    #app.run(host='0.0.0.0', port=4000
+    
+    
