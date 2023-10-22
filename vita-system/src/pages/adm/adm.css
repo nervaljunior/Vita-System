@@ -1,0 +1,77 @@
+#admbox {
+  position: absolute;
+  width: 1540px;
+  height: 740px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #122A6E;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  position: absolute;
+  height: 40px;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-size: 40px;
+  align-items: center;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  border-spacing: 5px;
+  margin: 10px 0 40px;
+  text-align: center;
+}
+
+thead {
+  top: 10px;
+}
+
+tbody {
+  top: 50px;
+}
+
+td,
+th {
+  padding: 5px 120px;
+}
+
+hr {
+  position: absolute;
+  width: 1538px;
+  left: 0px;
+  top: 50px;
+  border: 0.5px solid #000000;
+}
+
+#buttonadm {
+  position: absolute;
+  width: 320px;
+  height: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 660px;
+  background: white;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 45px;
+  font-family: 'IBM Plex Sans';
+  font-size: 40px;
+  color: #122A6E;
+}
+
+#buttonlogout {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  top: 40px;
+  background: white;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 45px;
+  font-family: 'IBM Plex Sans';
+  font-size: 20px;
+  color: #122A6E;
+}

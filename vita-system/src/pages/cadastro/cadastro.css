@@ -1,0 +1,171 @@
+/* Ajustando o título*/
+#h1cadastro {
+  position: absolute;
+  left: 23.89%;
+  right: 23.89%;
+  top: 6.74%;
+  bottom: 86.26%;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 55px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+}
+
+/* Ajustando a caixa com os conteudos*/
+.box {
+  position: absolute;
+  width: 600px;
+  height: 650px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #122A6E;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Ajustando todos os inputs e depois só posicionando*/
+#usercad,
+#matriculacad,
+#passwordcad,
+#confirmpasswordcad {
+  position: absolute;
+  width: 530px;
+  height: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #122A6E;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 25px;
+  font-family: 'IBM Plex Sans';
+  color: #9F9999;
+}
+
+#usercad {
+  top: 160px;
+}
+
+#matriculacad {
+  top: 230px;
+}
+
+#passwordcad {
+  top: 300px;
+}
+
+#confirmpasswordcad {
+  top: 370px;
+}
+
+/* Ajustando as checkboxes e posicionando */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border: 1px solid white;
+  border-radius: 4px;
+  position: relative;
+  top: 430px;
+  left: 90px;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #122A6E;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+  opacity: 1;
+}
+
+#admlabel,
+#funclabel {
+  position: relative;
+  top: 422px;
+  left: 90px;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-size: 25px;
+  color: white;
+}
+
+/* Impedir que os dois checkboxes sejam marcados simultaneamente */
+#adminput:checked~#funcinput,
+#funcinput:checked~#adminput {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Desabilitar o checkbox de administrador quando o de operador estiver marcado */
+#funcinput:checked~#admlabel,
+#funcinput:checked~#adminput {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Desabilitar o checkbox de operador quando o de administrador estiver marcado */
+#adminput:checked~#funclabel,
+#adminput:checked~#funcinput {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#buttoncad {
+  position: absolute;
+  width: 320px;
+  height: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 580px;
+  background: white;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 45px;
+  font-family: 'IBM Plex Sans';
+  font-size: 40px;
+  color: #122A6E;
+}
+
+
+
+#pcadastro {
+  position: absolute;
+  left: 50%;
+  top: 480px;
+  transform: translate(-50%, -50%);
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #FF0000;
+
+}

@@ -1,0 +1,69 @@
+#recepcao {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    width: 280px;
+    height: 30px;
+    top: 115px;
+    left: 0px;
+    color: #FFF507;    
+    background-color: #DADADA;
+}
+
+#recepcao svg {
+    font-size: 23px;
+    margin-right: 5px;
+    color: #FFF507;
+    
+}
+
+#recebendo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    width: 280px;
+    height: 30px;
+    top: 115px;
+    left: 0px;
+    color: #00FF19;    
+    background-color: #DADADA;
+}
+
+#recepcao2 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    width: 280px;
+    height: 30px;
+    top: 55px;
+    left: 50.3%;
+    color: #FFF507;    
+    background-color: #DADADA;
+}
+
+#recepcao2 svg {
+    font-size: 23px;
+    margin-right: 5px;
+    color: #FFF507;
+    
+}
+
+#recebendo2 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    width: 280px;
+    height: 30px;
+    top: 55px;
+    left: 50.3%;
+    color: #00FF19;    
+    background-color: #DADADA;
+}

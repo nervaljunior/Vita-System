@@ -1,0 +1,73 @@
+
+.boxSave {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #122A6E;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#tituloSave {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    width:max-content;
+    transform: translate(-50%,-50%);
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 55px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+}
+
+.botaoSim {
+    margin-top: 45px;
+    height: 40px;
+    font-size: 30px;
+    margin-right: 10px;
+    background-color: #122A6E;
+    color: #FFFFFF;
+    border-width: 0px;
+}
+
+.botaoSim span {
+    display: flex;
+    align-items: center;
+}
+
+.botaoNao {
+    margin-top: 45px;
+    height: 40px;
+    font-size: 30px;
+    margin-left: 10px;
+    background-color: #122A6E;
+    color: #FFFFFF;
+    border-width: 0px;
+}
+
+.botaoNao span {
+    display: flex;
+    align-items: center;
+}
+
+.botaoNao svg {
+    color: red;
+}
+
+#helpdados {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    overflow-y: scroll;
+}
