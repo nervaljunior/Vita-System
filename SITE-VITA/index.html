@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VITA | Respirador inteligente</title>
+    <link rel="stylesheet" href="style.css">    
+    <link href="dist/hamburgers.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="navegation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon" ><ion-icon name="medical-outline"></ion-icon></span>
+                        <span class="tittle">PROJETO VITA</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="tittle">Painel</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="tittle">Pessoas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                        <span class="tittle">Menssagem</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
+                        <span class="tittle">Ajuda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="construct-outline"></ion-icon></span>
+                        <span class="tittle">Configurações</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <span class="tittle">Senha</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="tittle">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- PRINCIPAL -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <!-- PROCURAR -->
+                <div class="search">
+                    <label for="">
+                        <input type="text" placeholder="Pesquise aqui...">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <!-- IMAGEM -->
+                <div class="user">
+                    <img src="woman.png">
+                </div> 
+            </div>
+
+            <!-- CARTÕES -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">200 mL</div>
+                        <div class="cardName">Volume corrente</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">1 : 3</div>
+                        <div class="cardName">Razão I:E</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="bar-chart-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">10 RPM<sup>2</sup></div>
+                        <div class="cardName">Frequência Respiratória</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="fitness-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="numbers">6.6 m<sup>3</sup>/min</div>
+                        <div class="cardName">Fluxo médio</div>
+                    </div>
+                    <div class="iconBox">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LISTA DE DADOS -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Monitoramento</h2>
+                        <a href="#" class="btn">Ver Todos</a>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Nome</td>
+                                <td>Situação</td>
+                                <td>Dados</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td><span class="status stable">OPERACIONAL</span></td>
+                            </tr>
+                            <tr>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td><span class="status stable">OPERACIONAL</span></td>
+                            </tr>
+                            <tr>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td><span class="status attention">OPERACIONAL</span></td>
+                            </tr>
+                            <tr>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td><span class="status stable">OPERACIONAL</span></td>
+                            </tr>
+                            <tr>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td><span class="status stable">OPERACIONAL</span></td>
+                            </tr>
+                            <tr>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td>Informação</td>
+                                <td><span class="status critical">INOPERANTE</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- PACIENTES -->
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2>Pacientes</h2>
+                    </div>
+                    <table>
+                        <tr>
+                            <td width="60px"><div class="imgBox"><img src="man.png"></div></td>
+                            <td><h4>Nerval Junior<br><span>Grupo sanguíneo:O+</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="imgBox"><img src="referee.png"></div></td>
+                            <td><h4>Nerval Junior<br><span>Grupo sanguíneo:O+</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="imgBox"><img src="businessman.png"></div></td>
+                            <td><h4>Nerval Junior<br><span>Grupo sanguíneo:O+</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="imgBox"><img src="man.png"></div></td>
+                            <td><h4>Nerval Junior<br><span>Grupo sanguíneo:O+</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="imgBox"><img src="boy.png"></div></td>
+                            <td><h4>Nerval Junior<br><span>Grupo sanguíneo:O+</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="imgBox"><img src="businessman.png"></div></td>
+                            <td><h4>Nerval Junior<br><span>Grupo sanguíneo:O+</span></h4></td>
+                        </tr>
+                        <tr>
+                            <td width="60px"><div class="imgBox"><img src="boy (1).png"></div></td>
+                            <td><h4>Nerval Junior<br><span>Grupo sanguíneo:O+</span></h4></td>
+                        </tr>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        //menu toggle
+        let toggle = document.querySelector('.toggle');
+        let navegation = document.querySelector('.navegation');
+        let main = document.querySelector('.main');
+
+        toggle.onclick = function(){
+            navegation.classList.toggle('active')
+            main.classList.toggle('active')
+        }
+        
+        //hover entre as opções
+        let list = document.querySelectorAll('.navegation li');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('hovered'));
+            this.classList.add('hovered');
+        }
+        list.forEach((item) => 
+        item.addEventListener('mouseover', activeLink));
+    </script>
+</body>
+</html>
