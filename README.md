@@ -4,7 +4,7 @@ sistema de controle e plataforma de recebimento de dados do VITA
 
 # Projeto VITA - Monitoramento e Controle de Dispositivo Médico
 
-![VITA Logo](logo.png)
+![VITA Logo](logo.png)(sem logo// AINDA)
 
 O Projeto VITA é uma iniciativa que visa desenvolver um sistema embarcado inovador para o monitoramento e controle de dispositivos médicos, utilizando tecnologias de Internet das Coisas (IoT) e integração de hardware e software. O objetivo central é permitir um acompanhamento eficiente de dispositivos médicos, fornecendo uma interface gráfica amigável para visualização em tempo real, além de comunicação segura com um banco de dados para análise posterior.
 
@@ -29,7 +29,7 @@ O Projeto VITA é uma iniciativa que visa desenvolver um sistema embarcado inova
 
 3. **Execução:**
    - Execute o servidor da interface gráfica executando o comando `python app.py`.
-   - Acesse a interface web no navegador utilizando o endereço `http://localhost:5000`.
+   - Acesse a interface web no navegador utilizando o endereço `http://localhost:3000`.
 
 4. **Utilização:**
    - Visualize os dados em tempo real na interface gráfica.
