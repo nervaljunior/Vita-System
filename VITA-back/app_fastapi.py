@@ -16,10 +16,9 @@ app.add_middleware(
 )
 
 
-
-mqtt_broker = "mqtt.seuservidor.com"
+mqtt_broker = "broker.mqttdashboard.com"
 mqtt_port = 1883
-mqtt_topic = "real_unique_topic"
+mqtt_topic = "wokwi-weather"
 
 received_data = {}  # Armazenar os dados recebidos via MQTT
 
@@ -54,7 +53,7 @@ async def get_data():
     
 
     return {
-        "Volume_corrente": data.get(mqtt_topic, 0),  # Usar get com um valor padrão de 0 se a chave não existir
+        "Volume_corrente": data.get(mqtt_topic, 0),  
         "Razão_IE": data.get(mqtt_topic, 0),
         "Frequência": data.get(mqtt_topic, 0),
         "Fluxo_médio": data.get(mqtt_topic, 0)
