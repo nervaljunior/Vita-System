@@ -21,7 +21,7 @@ function Geral() {
   useEffect(() => {
     const fetchDataFromApi = async () => {
       try {
-        const response = await axios.get('http://localhost:7777/get_data');
+        const response = await axios.get('http://localhost:7777/get_random_data');
         const data = response.data;
   
         // Atualize os valores da API

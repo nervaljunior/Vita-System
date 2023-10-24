@@ -1,74 +1,84 @@
 import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SensorData = () => {
-  const [chartData, setChartData] = useState({});
+  const [chartData, setChartData] = useState({
+    labels: [],
+    datasets: [
+      {
+        label: 'Volume_corrente',
+        data: [],
+        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      },
+      {
+        label: 'Razao_IE',
+        data: [],
+        borderColor: 'rgba(255, 99, 132, 1)',
+        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      },
+      {
+        label: 'Frequencia',
+        data: [],
+        borderColor: 'rgba(192, 192, 75, 1)',
+        backgroundColor: 'rgba(192, 192, 75, 0.2)',
+      },
+      {
+        label: 'Fluxo_medio',
+        data: [],
+        borderColor: 'rgba(192, 75, 75, 1)',
+        backgroundColor: 'rgba(192, 75, 75, 0.2)',
+      },
+    ],
+  });
 
-  useEffect(() => {
-    // Gere dados aleatórios para o exemplo
-    const generateRandomData = () => {
-      const labels = [];
-      const Volume_corrente = [];
-      const Razao_IE = [];
-      const Frequencia = [];
-      const Fluxo_medio = [];
-
-      for (let i = 1; i <= 10; i++) {
-        labels.push(`Data ${i}`);
-        Volume_corrente.push(Math.random() * 100);
-        Razao_IE.push(Math.random() * 50);
-        Frequencia.push(Math.random() * 60);
-        Fluxo_medio.push(Math.random() * 40);
+  const updateChartData = (newData) => {
+    setChartData((prevData) => {
+      const newLabels = [...prevData.labels, new Date().toLocaleTimeString()];
+      if (newLabels.length > 10) {
+        newLabels.shift();
       }
 
-      return { labels, Volume_corrente, Razao_IE, Frequencia, Fluxo_medio };
+      const newDatasets = prevData.datasets.map((dataset) => {
+        return {
+          ...dataset,
+          data: [...dataset.data, newData[dataset.label.replace('_', ' ')]] // Atualiza os dados do dataset correspondente
+        };
+      });
+
+      return {
+        labels: newLabels,
+        datasets: newDatasets,
+      };
+    });
+  };
+
+  useEffect(() => {
+    const fetchDataFromApi = async () => {
+      try {
+        const response = await axios.get('http://localhost:7777/get_random_data');
+        const data = response.data;
+
+        updateChartData(data);
+      } catch (error) {
+        console.error('Erro ao buscar dados da API:', error);
+      }
     };
 
-    const randomData = generateRandomData();
+    fetchDataFromApi(); // Chame a função para buscar dados da API
 
-    setChartData({
-      labels: randomData.labels,
-      datasets: [
-        {
-          label: 'Volume_corrente',
-          data: randomData.Volume_corrente,
-          borderColor: 'rgba(75, 192, 192, 1)',
-          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        },
-        {
-          label: 'Razão_IE',
-          data: randomData.Razao_IE,
-          borderColor: 'rgba(255, 99, 132, 1)',
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        },
-        {
-          label: 'Frequência',
-          data: randomData.Frequencia,
-          borderColor: 'rgba(192, 192, 75, 1)',
-          backgroundColor: 'rgba(192, 192, 75, 0.2)',
-        },
-        {
-          label: 'Fluxo_medio',
-          data: randomData.Fluxo_medio,
-          borderColor: 'rgba(192, 75, 75, 1)',
-          backgroundColor: 'rgba(192, 75, 75, 0.2)',
-        },
-      ],
-    });
+    const interval = setInterval(fetchDataFromApi, 1000); // Atualize os dados a cada segundo
+
+    return () => clearInterval(interval);
   }, []);
-
-
-  
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-        {chartData && chartData.labels && chartData.datasets && chartData.datasets.length > 0 && (
-  <Line data={chartData} options={{}} />
-)}
-
+          <Line data={chartData} options={{}} />
         </div>
       </div>
     </div>
