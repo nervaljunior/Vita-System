@@ -11,6 +11,74 @@
   body {
     margin: 0;
   }
+
+  .navbar{
+    display: flex;
+    height: 100px;
+    background: white;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+    flex: 20%;
+    /* border: 1px solid red; */
+    text-align: center;
+    margin-left: 10%;
+
+}
+.logo h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #180f4a;
+    font-size: 34px;
+
+}
+.menu{
+    flex: 70%;
+    /* border: 1px solid green; */
+    text-align:right ;
+    padding: 20px;
+}
+.menu a{
+    color: #180f4a;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px  20px;
+}
+.menu a:hover{
+    color: #ff2978;
+    border-top: 4PX SOLID #180f4a;
+
+}
+#botao{
+    background: #180f4a;
+    padding: 10px 25px;
+    border-radius:  5px ;
+    color:white ;
+    margin-right: 15%;
+    margin-left: 5%;
+}
+#botao:hover{
+    border: none;
+    color: #ff2978;
+}
+.header{
+    display: flex;
+    flex-flow: row wrap;
+    background: gray;
+    height: 600px;
+}
+.headline{
+    flex: 40%;
+    margin-left: 10%;
+    border: 1px solid black;
+}
+.img-headline{
+    margin-right: 10%;
+    flex: 40%;
+    border: #ff2978;
+    text-align: center;
+}
+
   
 :root{
     --blue: #287bff;

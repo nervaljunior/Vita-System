@@ -2,15 +2,15 @@ import React from "react";
 import './func.css'
 import {BiCaretRight, BiSquare} from 'react-icons/bi'
 import { AiOutlineClose } from 'react-icons/ai'
-import { useAuth } from '../../Auth/context'
+import { useAuth } from '../../src/Auth/context'
 import { useState, useEffect } from "react";
-import { ConfigAntena } from "../../components/ModalAntena/configAntena";
-import { Grafico, Grafico2 } from "../../components/Grafico/grafico";
-import { Mensagem, Mensagem2 } from "../../components/mensagem/mensagem";
-import { Cronometro } from "../../components/Cronometro/cronometro";
+import { ConfigAntena } from "../../src/components/ModalAntena/configAntena";
+import { Grafico, Grafico2 } from "../../src/components/Grafico/grafico";
+import { Mensagem, Mensagem2 } from "../../src/components/mensagem/mensagem";
+import { Cronometro } from "../../src/components/Cronometro/cronometro";
 import axios from "axios";
-import { Save } from "../../components/save/save";
-import { Salvo } from "../../components/salvo/salvo";
+import { Save } from "../../src/components/save/save";
+import { Salvo } from "../../src/components/salvo/salvo";
 
 export const Funcionario = () => { 
     

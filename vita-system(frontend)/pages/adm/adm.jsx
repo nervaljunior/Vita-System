@@ -2,7 +2,7 @@ import './adm.css'
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Navigate, useNavigate } from 'react-router-dom';
-import { useAuth } from '../../Auth/context';
+import { useAuth } from '../../src/Auth/context';
 
 
 export const Adm = () => {
