@@ -1,12 +1,13 @@
-from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from jwt import encode as jwt_encode
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from fastapi import Depends, HTTPException
+from fastapi import Depends, HTTPException ,FastAPI
 import mysql.connector
 from mysql.connector import errorcode
 import paho.mqtt.client as mqtt
+import jwt
+from jwt.exceptions import DecodeError
 
 
 app = FastAPI()
@@ -34,7 +35,7 @@ class User(BaseModel):
 class MqttData(BaseModel):
     data: str
 
-# MySQL connection
+
 try:
     connection = mysql.connector.connect(
         host="localhost",
@@ -107,15 +108,16 @@ def register(user: User):
 
 @app.get("/api/user")
 def get_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
-
     token = credentials.credentials
-
-    user_data = {
-        "username": "John Doe",
-        "email": "johndoe@example.com"
-    }
-    if user_data["username"] and user_data["email"]:
-        return user_data
+    user_email = decode_token(token)
+    user_id = get_user_id_by_email(user_email)
+    if user_id is not None:
+        user_data = get_user_data_by_id(user_id)
+        if user_data:
+            return {
+                "username": user_data[0],
+                "email": user_data[1]
+            }
     raise HTTPException(status_code=401, detail="Invalid token")
 
 
@@ -166,12 +168,43 @@ async def get_mqtt_data():
     }
 
 @app.post("/save_data")
-async def save_mqtt_data(data: MqttData):
-    query = "INSERT INTO dados (data) VALUES (%s)"
-    cursor.execute(query, (data.data,))
-    connection.commit()
+async def save_mqtt_data(data: MqttData, credentials: HTTPAuthorizationCredentials = Depends(security)):
+
+    token = credentials.credentials
+
+    user_email = decode_token(token)
+
+    user_id = get_user_id_by_email(user_email)
+
+    if user_id is not None:
+        query = "INSERT INTO dados (user_id, data) VALUES (%s, %s)"
+        cursor.execute(query, (user_id, data.data))
+        connection.commit()
+        return {"message": "Data received and saved successfully"}
+    else:
+        raise HTTPException(status_code=401, detail="User not found")
+
+def decode_token(token: str) -> str:
+    try:
+        payload = jwt.decode(token, 'your-secret-key-goes-here', algorithms=["HS256"])
+        return payload['email']
+    except DecodeError:
+        return None
+
+def get_user_id_by_email(email: str) -> int:
+    query = "SELECT id FROM users WHERE email = %s"
+    cursor.execute(query, (email,))
+    result = cursor.fetchone()
+    if result:
+        return result[0]
+    return None
+
+
+def get_user_data_by_id(user_id: int):
     
-    return {"message": "Data received and saved successfully"}
+    query = "SELECT username, email FROM users WHERE id = %s"
+    cursor.execute(query, (user_id,))
+    return cursor.fetchone()
 
 
 def generate_token(email: str) -> str:
