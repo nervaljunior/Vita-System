@@ -18,7 +18,7 @@ export default function Home() {
         
       </Head>
 
-{/*       style={{ backgroundColor: '#000080', color: '#fff' }} */}
+
       <main >
         <Topbar />
         <SensorData/>
