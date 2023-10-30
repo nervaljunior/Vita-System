@@ -1,15 +1,17 @@
-from fastapi import Depends, HTTPException, APIRouter
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from jwt import encode as jwt_encode
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi import Depends, HTTPException
 import mysql.connector
 from mysql.connector import errorcode
+import paho.mqtt.client as mqtt
 
 
-router = APIRouter()
+app = FastAPI()
 
-router.add_middleware(
+app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000"],  
     allow_credentials=True,
@@ -17,12 +19,22 @@ router.add_middleware(
     allow_headers=["*"],
 )
 
+
+mqtt_broker = "broker.mqttdashboard.com"
+mqtt_port = 1883
+mqtt_topic = "wokwi-weather"
+
+received_data = {}
+
 class User(BaseModel):
     username: str = None  
     email: str
     password: str
 
+class MqttData(BaseModel):
+    data: str
 
+# MySQL connection
 try:
     connection = mysql.connector.connect(
         host="localhost",
@@ -46,11 +58,11 @@ cursor = connection.cursor()
 SECRET_KEY = "your-secret-key-goes-here"
 security = HTTPBearer()
 
-@router.get("/")
+@app.get("/")
 def homepage():
     return {"message": "Welcome to the homepage"}
 
-@router.post("/login")
+@app.post("/login")
 def login(user: User):
     
     query = "SELECT * FROM users WHERE email = %s AND password = %s"
@@ -69,7 +81,7 @@ def login(user: User):
 
     return {"message": "Invalid email or password"}
 
-@router.post("/register")
+@app.post("/register")
 def register(user: User):
 
     query = "SELECT * FROM users WHERE email = %s"
@@ -93,7 +105,7 @@ def register(user: User):
     user_dict["token"] = token
     return user_dict
 
-@router.get("/api/user")
+@app.get("/api/user")
 def get_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
 
     token = credentials.credentials
@@ -107,7 +119,7 @@ def get_user(credentials: HTTPAuthorizationCredentials = Depends(security)):
     raise HTTPException(status_code=401, detail="Invalid token")
 
 
-@router.get("/api/users/{username}")
+@app.get("/api/users/{username}")
 def get_user_details(username: str):
     query = "SELECT username, email FROM users WHERE username = %s"
     cursor.execute(query, (username,))
@@ -120,22 +132,53 @@ def get_user_details(username: str):
         return user_details
     raise HTTPException(status_code=404, detail="User not found")
 
-@router.put("/api/users/{username}")
+@app.put("/api/users/{username}")
 def update_user_details(username: str, user: User):
     query = "UPDATE users SET password = %s WHERE username = %s"
     cursor.execute(query, (user.password, username))
     connection.commit()
     return {"message": "User details updated successfully"}
 
-@router.delete("/api/users/{username}")
+@app.delete("/api/users/{username}")
 def delete_user(username: str):
     query = "DELETE FROM users WHERE username = %s"
     cursor.execute(query, (username,))
     connection.commit()
     return {"message": f"User {username} deleted successfully"}
 
+
+def on_message(client, userdata, message):
+    payload = message.payload.decode("utf-8")
+    received_data[mqtt_topic] = payload
+    print(f"Received MQTT data on topic {mqtt_topic}: {payload}")
+
+
+mqtt_client = mqtt.Client()
+mqtt_client.on_message = on_message
+mqtt_client.connect(mqtt_broker, mqtt_port)
+mqtt_client.subscribe(mqtt_topic)
+mqtt_client.loop_start()
+
+@app.get('/get_data')
+async def get_mqtt_data():
+    return {
+        "Mensagem_MQTT": received_data.get(mqtt_topic, "Nenhum dado recebido via MQTT")
+    }
+
+@app.post("/save_data")
+async def save_mqtt_data(data: MqttData):
+    query = "INSERT INTO dados (data) VALUES (%s)"
+    cursor.execute(query, (data.data,))
+    connection.commit()
+    
+    return {"message": "Data received and saved successfully"}
+
+
 def generate_token(email: str) -> str:
     payload = {"email": email}
     token = jwt_encode(payload, SECRET_KEY, algorithm="HS256")
     return token
 
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
