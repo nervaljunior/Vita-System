@@ -215,3 +215,28 @@ def generate_token(email: str) -> str:
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+
+
+
+""" def on_message(client, userdata, message):
+    payload = message.payload.decode("utf-8")
+    received_data[mqtt_topic] = payload
+    print(f"Received MQTT data on topic {mqtt_topic}: {payload}")
+
+    user_email = None
+    if Request.state.user:
+        user_email = Request.state.user.email
+
+    
+    if user_email:
+        user_id = get_user_id_by_email(user_email)
+        if user_id is not None:
+            query = "INSERT INTO dados (user_id, data) VALUES (%s, %s)"
+            cursor.execute(query, (user_id, payload))
+            connection.commit()
+            print("Data saved to the database.")
+        else:
+            print("User not found in the database.")
+ """
