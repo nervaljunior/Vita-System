@@ -4,7 +4,7 @@ import {BsFillCircleFill} from 'react-icons/bs'
 import './mensagem.css'
 
 
-//verificando se ja esta recebendo dados grafico 2 e mostrando mensagem
+
 export const Mensagem = ({ iniciar }) => {
     const [recebendo, setRecebendo] = useState();
     let tamanho;
