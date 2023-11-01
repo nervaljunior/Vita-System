@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Geral from "../src/components/geral/geral";
+import handleLogin from "../src/context/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  async function login(){
+    handleLogin(email,password)
+  }
 
   return (
     <>
@@ -21,7 +25,7 @@ const Login = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={login}>Login</button>
     </div>
    
     <Geral/>
