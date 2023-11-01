@@ -3,11 +3,12 @@
 #include <ArduinoMqttClient.h>  
 #include <ArduinoJson.h>
 #include "secrets.h"
-#include <Arduino_LSM6DS3.h> // Biblioteca do acelerômetro
+#include <Arduino_LSM6DS3.h> 
 
 
 char ssid[] = SECRET_SSID;
 char pass[] = SECRET_PASS;
+
 
  const char broker[] = "broker.mqttdashboard.com";  
  int port = 1883;  
@@ -28,7 +29,7 @@ void setup() {
     ;
   }
 
-  // Inicializa o acelerômetro
+
   if (!IMU.begin()) {
     Serial.println("Failed to initialize IMU!");
     while (1);
@@ -68,24 +69,23 @@ void loop() {
   if (currentMillis - previousMillis >= interval) {
     previousMillis = currentMillis;
 
-    // Leitura dos valores do acelerômetro
+
     float x, y, z;
     if (IMU.accelerationAvailable()) {
       IMU.readAcceleration(x, y, z);
     }
 
-    //aqui eu tenho que pegar os dados que ja tem na programação do arduino
-    // Leitura dos valores dos sensores analógicos
+
     int volume_corrente = analogRead(A0);
     int razao_ie = analogRead(A1);
     int frequencia = analogRead(A2);
     int fluxo_medio = analogRead(A3);
 
-    // Crie um objeto JSON para armazenar os dados
+
     //StaticJsonDocument<200> jsonDoc;
     DynamicJsonDocument jsonDoc(200);
 
-    // Preencha o objeto JSON com os dados
+
     jsonDoc["Volume_corrente"] = volume_corrente;
     jsonDoc["Razao_IE"] = razao_ie;
     jsonDoc["Frequencia"] = frequencia;
@@ -94,15 +94,15 @@ void loop() {
     jsonDoc["AcelerometroY"] = y;
     jsonDoc["AcelerometroZ"] = z;
 
-    // Crie um buffer para armazenar o JSON como uma string
+
     char jsonBuffer[200];
     serializeJson(jsonDoc, jsonBuffer);
 
-    // Imprima o JSON no monitor Serial
+
     Serial.println("JSON enviado via MQTT:");
     Serial.println(jsonBuffer);
 
-    // Publique o JSON no tópico MQTT
+
     mqttClient.beginMessage(topic);
     mqttClient.print(jsonBuffer);
     mqttClient.endMessage();

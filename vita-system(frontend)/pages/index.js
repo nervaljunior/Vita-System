@@ -4,10 +4,11 @@ import SensorData from '../src/components/teste/teste'
 import Topbar from '../src/components/Topbar/Topbar'
 
 
-/* import Image from 'next/image'
-import styles from '../styles/Home.module.css' */
+
 
 export default function Home() {
+
+  /*  */
   return (
     <div >
       <Head>
@@ -20,10 +21,10 @@ export default function Home() {
 
 
       <main >
+        {/* {if } */}
         <Topbar />
         <SensorData/>
-        <Geral/>
-            
+        <Geral/>   
       </main>
     </div>
   )

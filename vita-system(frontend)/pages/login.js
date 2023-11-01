@@ -1,23 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
+import Geral from "../src/components/geral/geral";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = async () => {
-    try {
-      const response = await axios.post("http://localhost:8000/login", {
-        email,
-        password,
-      });
-
-    } catch (error) {
-      console.error("Erro no login:", error);
-    }
-  };
-
   return (
+    <>
     <div>
       <h1>Login</h1>
       <input
@@ -34,6 +23,9 @@ const Login = () => {
       />
       <button onClick={handleLogin}>Login</button>
     </div>
+   
+    <Geral/>
+    </>
   );
 };
 
