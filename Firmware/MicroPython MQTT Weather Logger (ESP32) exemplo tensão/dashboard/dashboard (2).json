@@ -1,0 +1,89 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1
+			},
+			"col": {
+				"3": 1,
+				"4": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"value": "datasources[\"RESISTENCIA\"]",
+						"min_value": 0,
+						"max_value": "1024"
+					}
+				},
+				{
+					"type": "gauge",
+					"settings": {
+						"value": "datasources[\"bits\"]",
+						"min_value": 0,
+						"max_value": "4095"
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1
+			},
+			"col": {
+				"3": 2,
+				"4": 1
+			},
+			"col_width": 2,
+			"widgets": [
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "grafico de potencia ",
+						"value": [
+							"datasources[\"Volts\"]"
+						],
+						"include_legend": true,
+						"legend": "RESISTENCIA "
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "RESISTENCIA",
+			"type": "BIPES Serial, USB or Bluetooth",
+			"settings": {
+				"id": "11",
+				"refresh": 1
+			}
+		},
+		{
+			"name": "Volts",
+			"type": "BIPES Serial, USB or Bluetooth",
+			"settings": {
+				"id": "2",
+				"refresh": 5
+			}
+		},
+		{
+			"name": "bits",
+			"type": "BIPES Serial, USB or Bluetooth",
+			"settings": {
+				"id": "2",
+				"refresh": 5
+			}
+		}
+	],
+	"columns": 3
+}

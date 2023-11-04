@@ -17,7 +17,7 @@ char pass[] = SECRET_PASS;
  const char* mqttPassword = "";  
  const char* clientId = "micropython-weather-demo";  
 
-WiFiSSLClient wifiClient; // Usar WiFiSSLClient para conexões seguras com MQTT
+WiFiSSLClient wifiClient; 
  MqttClient mqttClient(wifiClient);  
 
 const long interval = 8000;
