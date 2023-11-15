@@ -1,6 +1,6 @@
 #include <SPI.h>
 #include <WiFiNINA.h>
-#include <ArduinoMqttClient.h>  
+#include <ArduinoMqttClient.h>
 #include <ArduinoJson.h>
 #include "secrets.h"
 #include <Arduino_LSM6DS3.h> // Biblioteca do acelerômetro
@@ -9,15 +9,15 @@
 char ssid[] = SECRET_SSID;
 char pass[] = SECRET_PASS;
 
- const char broker[] = "broker.mqttdashboard.com";  
- int port = 1883;  
- const char topic[] = "wokwi-weather";  
- const char* mqttUser = "";  
- const char* mqttPassword = "";  
- const char* clientId = "micropython-weather-demo";  
+const char broker[] = "broker.mqttdashboard.com";
+int port = 1883;
+const char topic[] = "wokwi-weather";
+const char* mqttUser = "";
+const char* mqttPassword = "";
+const char* clientId = "micropython-weather-demo";
 
 WiFiSSLClient wifiClient; // Usar WiFiSSLClient para conexões seguras com MQTT
- MqttClient mqttClient(wifiClient);  
+MqttClient mqttClient(wifiClient);
 
 const long interval = 8000;
 unsigned long previousMillis = 0;
@@ -44,24 +44,24 @@ void setup() {
   Serial.println("Connected to Wi-Fi");
   Serial.println();
 
-   Serial.print("Attempting to connect to the MQTT broker: ");
-   Serial.println(broker);  
+  Serial.print("Attempting to connect to the MQTT broker: ");
+  Serial.println(broker);
 
-   if (!mqttClient.connect(broker, port)) {
-     Serial.print("MQTT connection failed! Error code = ");
-     Serial.println(mqttClient.connectError());
-     while (1);
-   }
+  if (!mqttClient.connect(broker, port)) {
+    Serial.print("MQTT connection failed! Error code = ");
+    Serial.println(mqttClient.connectError());
+    while (1);
+  }
 
-   Serial.println("Connected to the MQTT broker!"); 
+  Serial.println("Connected to the MQTT broker!");
   Serial.println();
 }
 
 void loop() {
-   if (!mqttClient.connected()) {  
-     reconnect();  
-   }
-   mqttClient.poll();  
+  if (!mqttClient.connected()) {
+    reconnect();
+  }
+  mqttClient.poll();
 
   unsigned long currentMillis = millis();
 
@@ -110,18 +110,18 @@ void loop() {
     Serial.println("JSON enviado via MQTT:");
     Serial.println(jsonBuffer);
 
-    delay(5000);  
+    delay(5000);
   }
 }
 
-void reconnect() {  
-   while (!mqttClient.connected()) {  
-     Serial.print("Connecting to the MQTT server...");  
-     if (mqttClient.connect("ArduinoClient")) {  
-       Serial.println("Connected");  
-     } else {
-       Serial.println("Connection failed. Trying again in 5 seconds...");  
-       delay(5000);  
-     }
-   }
- }
+void reconnect() {
+  while (!mqttClient.connected()) {
+    Serial.print("Connecting to the MQTT server...");
+    if (mqttClient.connect("ArduinoClient")) {
+      Serial.println("Connected");
+    } else {
+      Serial.println("Connection failed. Trying again in 5 seconds...");
+      delay(5000);
+    }
+  }
+}

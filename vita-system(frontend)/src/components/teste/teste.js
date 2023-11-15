@@ -75,7 +75,7 @@ const SensorData = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="grafico">
       <div className="row">
         <div className="col-md-12">
           <Line data={chartData} options={{}} />

@@ -1,14 +1,11 @@
 import Head from 'next/head'
-import Geral from '../src/components/geral/geral'
-import SensorData from '../src/components/teste/teste'
 import Topbar from '../src/components/Topbar/Topbar'
-
-
+import HomePage from '../src/components/homePage/homePage'
 
 
 export default function Home() {
 
-  /*  */
+
   return (
     <div >
       <Head>
@@ -18,14 +15,13 @@ export default function Home() {
 
         
       </Head>
-
-
+      
       <main >
-        {/* {if } */}
-        <Topbar />
-        <SensorData/>
-        <Geral/>   
+      <Topbar /> 
+      <HomePage/>
       </main>
     </div>
   )
 }
+
+

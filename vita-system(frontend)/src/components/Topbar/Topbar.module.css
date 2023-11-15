@@ -8,7 +8,7 @@
 }
 .logo{
     flex: 20%;
-    /* border: 1px solid red; */
+    
     text-align: center;
     margin-left: 10%;
 
@@ -21,7 +21,6 @@
 }
 .menu{
     flex: 70%;
-    /* border: 1px solid green; */
     text-align:right ;
     padding: 20px;
 }
@@ -75,7 +74,6 @@
 }
 .logo{
     flex: 20%;
-    /* border: 1px solid red; */
     text-align: center;
     margin-left: 10%;
 
@@ -88,7 +86,6 @@
 }
 .menu{
     flex: 70%;
-    /* border: 1px solid green; */
     text-align:right ;
     padding: 20px;
 }
@@ -195,3 +192,105 @@
     height: 100%;
     object-fit: cover;
 }
+
+
+
+
+
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.navList {
+    display: flex;
+    align-items: center;
+}
+
+.navList ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navItem {
+    margin: 0 15px;
+}
+
+.navLink {
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+.loginButton button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #0187a7;
+}
+
+.loginButton button a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.mobileMenuIcon {
+    display: none;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+@media screen and (max-width: 730px) {
+    .nav-bar {
+        padding: 1.5rem 4rem;
+    }
+    .navItem {
+        display: none;
+    }
+    .loginButton {
+        display: none;
+    }
+    .mobileMenu-icon {
+        display: block;
+    }
+    .mobileMenu-icon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .mobileMenu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .mobileMenu .navItem {
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .mobileMenu .loginButton {
+        display: block;
+        padding: 1rem 2rem;
+    }
+    .mobileMenu .loginButton button {
+        width: 100%;
+    }
+    .open {
+        display: block;
+    }
+}
+
