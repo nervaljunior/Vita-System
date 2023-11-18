@@ -1,0 +1,107 @@
+/* Arquivo Signup.css */
+
+  
+  
+  
+  .form {
+    width: 100%;
+    max-width: 840px;
+    background-color: white;
+    top: 100px;
+    position: absolute;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 1px 2px #ccc;
+  }
+  
+
+  .formGroup label {
+    display: block;
+    margin-bottom: 1px;
+  }
+  
+  .formGroup input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  
+ 
+/*   .submitButton {
+    width: 240px;
+    padding: 10px;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    font-size: xl;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: teal;
+  } */
+  
+  /* Signup.module.css */
+
+.signupContainer {
+    height: 100vh;
+  }
+  
+  .header {
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    font-size: 4xl;
+    padding-bottom: 8px;
+    text-align: center;
+  }
+  
+  .formContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    height: calc(100vh - 150px);
+  }
+  
+  .form {
+    width: 100%;
+    max-width: 840px;
+    background-color: white;
+    top: 100px;
+    position: absolute;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 1px 2px #ccc;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+
+  
+  .radioGroup {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .submitButton {
+    width: 240px;
+    padding: 10px;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    font-size: xl;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: teal;
+  }
+  
