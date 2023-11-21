@@ -29,7 +29,7 @@ const HomePage = () => {
       </main>
       <footer className={styles.footer}>
         <p>
-          &copy; 2023 VITA – VENTILAÇÃO INTENSIVA TECNOLOGICAMENTE ASSISTIDA | Desenvolvido por [Seu Nome].
+          &copy; 2023 VITA – VENTILAÇÃO INTENSIVA TECNOLOGICAMENTE ASSISTIDA | Desenvolvido por Nerval Junior.
         </p>
       </footer>
     </div>
