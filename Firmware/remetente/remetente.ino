@@ -3,20 +3,19 @@
 #include <ArduinoMqttClient.h>
 #include <ArduinoJson.h>
 #include "secrets.h"
-#include <Arduino_LSM6DS3.h> // Biblioteca do acelerômetro
-
+#include <Arduino_LSM6DS3.h> 
 
 char ssid[] = SECRET_SSID;
 char pass[] = SECRET_PASS;
 
-const char broker[] = "broker.mqttdashboard.com";
+const char broker[] = "test.mosquitto.org";
 int port = 1883;
-const char topic[] = "wokwi-weather";
+const char topic[] = "giros";
 const char* mqttUser = "";
 const char* mqttPassword = "";
-const char* clientId = "micropython-weather-demo";
+const char* clientId = "";
 
-WiFiSSLClient wifiClient; // Usar WiFiSSLClient para conexões seguras com MQTT
+WiFiSSLClient wifiClient; 
 MqttClient mqttClient(wifiClient);
 
 const long interval = 8000;
@@ -76,20 +75,20 @@ void loop() {
 
     //aqui eu tenho que pegar os dados que ja tem na programação do arduino
     // Leitura dos valores dos sensores analógicos
-    int volume_corrente = analogRead(A0);
+    /*int volume_corrente = analogRead(A0);
     int razao_ie = analogRead(A1);
     int frequencia = analogRead(A2);
-    int fluxo_medio = analogRead(A3);
+    int fluxo_medio = analogRead(A3);*/
 
     // Crie um objeto JSON para armazenar os dados
     //StaticJsonDocument<200> jsonDoc;
     DynamicJsonDocument jsonDoc(200);
 
     // Preencha o objeto JSON com os dados
-    jsonDoc["Volume_corrente"] = volume_corrente;
+    /*jsonDoc["Volume_corrente"] = volume_corrente;
     jsonDoc["Razao_IE"] = razao_ie;
     jsonDoc["Frequencia"] = frequencia;
-    jsonDoc["Fluxo_medio"] = fluxo_medio;
+    jsonDoc["Fluxo_medio"] = fluxo_medio;*/
     jsonDoc["AcelerometroX"] = x;
     jsonDoc["AcelerometroY"] = y;
     jsonDoc["AcelerometroZ"] = z;
