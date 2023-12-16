@@ -1,5 +1,5 @@
 {
-  "name": "vita-system",
+  "name": "windmill-dashboard-nextjs-typescript",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "axios": "^1.6.0",
-    "bootstrap": "^5.3.2",
-    "chart.js": "^4.4.0",
-    "next": "13.4.19",
-    "react": "18.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "chart.js": "^4.4.1",
+    "classnames": "^2.3.1",
+    "next": "11.1.2",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.9.1",
     "react-chartjs-2": "^5.2.0",
-    "react-dom": "18.2.0",
-    "styled-components": "^6.1.1"
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@roketid/windmill-react-ui": "^0.1.1",
+    "@svgr/webpack": "^6.1.0",
+    "@types/react": "17.0.21",
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.0.12",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.22",
+    "typescript": "4.4.3"
   }
 }
