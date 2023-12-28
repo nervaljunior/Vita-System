@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-28T14:24:00.951Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="MBANTLzjV8HhgPL0HIGn" version="22.1.13" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2023-12-28T14:41:14.639Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="ay3Ql-MxjqJpH0har_MD" version="22.1.13" type="github" pages="3">
   <diagram name="Página-1" id="4gFtuouUGML2QFo5xnKQ">
     <mxGraphModel dx="1040" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -258,10 +258,76 @@
     </mxGraphModel>
   </diagram>
   <diagram id="4oOIXBKgdEicmdKiNESA" name="Página-3">
-    <mxGraphModel dx="832" dy="439" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1040" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-1" value="" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=180;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="190" y="50" width="480" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-2" value="" style="shape=folder;fontStyle=0;spacingTop=10;tabWidth=170;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="210" y="80" width="210" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-3" value="" style="shape=folder;fontStyle=0;spacingTop=10;tabWidth=150;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="440" y="80" width="210" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-4" value="" style="shape=folder;fontStyle=0;spacingTop=10;tabWidth=110;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="210" y="250" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-5" value="" style="shape=folder;fontStyle=0;spacingTop=10;tabWidth=90;tabHeight=20;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="440" y="250" width="210" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-6" value="Cadastro de Pacientes" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="220" y="110" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-7" value="Container Docker" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="220" y="50" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-9" value="Deleção de Pacientes" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="320" y="110" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-10" value="Edição de Paciente" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="220" y="170" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-11" value="Visualização de Paciente" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="320" y="170" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-12" value="tópico 1" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="450" y="110" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-15" value="tópico 2" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="520" y="110" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-16" value="tópico 3" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="590" y="110" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-17" value="tópico 4" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="450" y="170" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-18" value="tópico 5" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="520" y="170" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-19" value="tópico 6" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="590" y="170" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-20" value="Microserviços de Pacientes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="210" y="75" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-22" value="Microserviços de Dados" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="75" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-23" value="Microserviço&lt;br&gt;Broker" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="275" y="290" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-24" value="Microserviço&lt;br&gt;Banco de Dados" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="500" y="280" width="90" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-26" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Container 2&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="440" y="250" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ddvpx5-lx05rRi9NQg3a-29" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;Container 1&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="230" y="250" width="80" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
